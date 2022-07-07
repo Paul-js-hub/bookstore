@@ -1,0 +1,19 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.list-container {
+  display: flex;
+  gap: 21px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
