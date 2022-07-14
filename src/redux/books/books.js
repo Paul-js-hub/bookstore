@@ -1,13 +1,14 @@
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
+// import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
+const FETCH_BOOKS = 'bookstore/books/fetchBooks';
 const ADD_BOOK = 'bookstore/books/addBook';
 const REMOVE_BOOK = 'bookstore/books/removeBook';
+const BASEURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ezRrPDXt6LZKLi0HXhfb/books';
 
 const initialState = {
-  books: [
-    { id: uuidv4(), title: 'React Testing', author: 'Harry Winks' },
-    { id: uuidv4(), title: 'JavaScript made simple', author: 'Paul Onchera' },
-  ],
+  books: [],
 };
 
 export default function booksReducer(state = initialState, action) {
@@ -18,6 +19,8 @@ export default function booksReducer(state = initialState, action) {
       ];
       return { ...state.books, books: newBooks };
     }
+    case FETCH_BOOKS:
+      return action.payload;
     case REMOVE_BOOK:
       return {
         ...state,
@@ -28,14 +31,18 @@ export default function booksReducer(state = initialState, action) {
   }
 }
 
-export const addBook = (title, author) => ({
-  type: ADD_BOOK,
-  payload: {
-    title,
-    author,
-    id: uuidv4(),
-  },
-});
+export const addBook = ({title, author, item_id, category}) => async (dispatch) => {
+  try {
+    const result = await axios.post(BASEURL, { title, author, item_id, category});
+    dispatch({
+      type: ADD_BOOK,
+      payload: result.data,
+    });
+    return Promise.resolve(result.data);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
 
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
@@ -43,3 +50,15 @@ export const removeBook = (id) => ({
     id,
   },
 });
+
+export const fetchBooks = () => async (dispatch) => {
+  try {
+    const response = await axios.get(BASEURL);
+    dispatch({
+      type: FETCH_BOOKS,
+      payload: response.data,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

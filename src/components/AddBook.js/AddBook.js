@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux/es/exports';
 import { addBook } from '../../redux/books/books';
 
 const AddBook = () => {
   const [state, setState] = useState({
+    item_id: uuidv4(),
     title: '',
     author: '',
+    category: 'Movies',
   });
+  console.log('STATE', state);
   const dispatch = useDispatch();
   const handleChange = (e) => {
     setState({
@@ -16,13 +20,19 @@ const AddBook = () => {
   };
 
   const handleSubmit = () => {
-    dispatch(addBook(state.title, state.author));
+    const {
+      title, author, item_id, category,
+    } = state;
+    dispatch(addBook({title, author, item_id, category}))
+      .then((data) => {
+        console.log('DATA>>>', data);
+      });
     state.title = '';
     state.author = '';
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           name="title"
           value={state.title}
