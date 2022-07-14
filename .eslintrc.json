@@ -19,7 +19,8 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
-      "no-param-reassign": 0
+      "no-param-reassign": 0,
+      "camelcase": ["error", {"allow": ["item_id"]}]
     },
     "ignorePatterns": [
       "dist/",
