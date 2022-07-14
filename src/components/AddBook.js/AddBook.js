@@ -5,12 +5,10 @@ import { addBook } from '../../redux/books/books';
 
 const AddBook = () => {
   const [state, setState] = useState({
-    item_id: uuidv4(),
     title: '',
     author: '',
     category: 'Movies',
   });
-  console.log('STATE', state);
   const dispatch = useDispatch();
   const handleChange = (e) => {
     setState({
@@ -21,14 +19,13 @@ const AddBook = () => {
 
   const handleSubmit = () => {
     const {
-      title, author, item_id, category,
+      title, author, category,
     } = state;
-    dispatch(addBook({
-      title, author, item_id, category,
-    }))
-      .then((data) => {
-        console.log('DATA>>>', data);
-      });
+    if (title.length > 0 && author.length > 0) {
+      dispatch(addBook({
+        title, author, item_id: uuidv4(), category,
+      }));
+    }
     state.title = '';
     state.author = '';
   };
