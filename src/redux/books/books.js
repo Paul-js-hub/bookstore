@@ -31,9 +31,13 @@ export default function booksReducer(state = initialState, action) {
   }
 }
 
-export const addBook = ({title, author, item_id, category}) => async (dispatch) => {
+export const addBook = ({
+  title, author, item_id, category,
+}) => async (dispatch) => {
   try {
-    const result = await axios.post(BASEURL, { title, author, item_id, category});
+    const result = await axios.post(BASEURL, {
+      title, author, item_id, category,
+    });
     dispatch({
       type: ADD_BOOK,
       payload: result.data,

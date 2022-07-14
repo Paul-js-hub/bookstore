@@ -23,7 +23,9 @@ const AddBook = () => {
     const {
       title, author, item_id, category,
     } = state;
-    dispatch(addBook({title, author, item_id, category}))
+    dispatch(addBook({
+      title, author, item_id, category,
+    }))
       .then((data) => {
         console.log('DATA>>>', data);
       });
