@@ -36,33 +36,30 @@ const AddBook = () => {
     <div className="form-container">
       <h3>ADD NEW BOOK</h3>
       <form className="">
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            id="title"
-            placeholder="Book title"
-            name="title"
-            value={state.title}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            id="author"
-            placeholder="author"
-            name="author"
-            value={state.author}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="button" className="btn btn-primary" onClick={handleSubmit}>
+        <input
+          type="text"
+          className="form-control input-title"
+          id="title"
+          placeholder="Book title"
+          name="title"
+          value={state.title}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          className="form-control input-author"
+          id="author"
+          placeholder="author"
+          name="author"
+          value={state.author}
+          onChange={handleChange}
+        />
+        <button type="button" className="btn btn-primary submit" onClick={handleSubmit}>
           ADD BOOK
         </button>
       </form>
     </div>
+
   );
 };
 

@@ -34,13 +34,15 @@ form {
   font-family: 'Montserrat', sans-serif;
   color: #121212;
   font-weight: bold;
+  font-size: 0.875rem;
 }
 
 .left-content > p {
   font-family: 'Montserrat', sans-serif;
   color: #4386bf;
   font-weight: bold;
-  font-size: 21px;
+  font-size: 16px;
+  margin-top: -5px;
 }
 
 .buttons-container {
@@ -63,6 +65,7 @@ form {
   font-size: 0.813rem;
   font-weight: bold;
   color: #121212;
+  margin-top: -35px;
 }
 
 .right-content > p {
@@ -73,7 +76,7 @@ form {
 }
 
 .form-container {
-  margin-top: 90px;
+  margin-top: 100px;
   width: 90%;
 }
 
@@ -108,5 +111,40 @@ form {
 .form-container > h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.right-content {
+  padding-right: 55px;
+}
+
+input#author {
+  width: 25% !important;
+}
+
+input#title {
+  width: 50% !important;
+}
+
+button.btn.btn-primary.submit {
+  width: 15%;
+}
+
+.left-content {
+  margin-left: 8px;
+  margin-bottom: 12px;
+}
+
+.line {
+  margin: 0;
+  border: 2px solid black;
+  height: 15px !important;
+}
+
+.navbar > .container-fluid {
+  width: 92% !important;
+}
+
+.books-container {
+  height: 756px;
 }

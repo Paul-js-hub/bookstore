@@ -17,7 +17,9 @@ const Book = ({ title, author, id }) => {
         <p>{author}</p>
         <div className="buttons-container">
           <button type="button" className="action-btn">Comments</button>
+          <hr className="line" />
           <button type="button" className="action-btn" onClick={deleteBook}>Remove</button>
+          <hr className="line" />
           <button type="button" className="action-btn">Edit</button>
         </div>
       </div>
