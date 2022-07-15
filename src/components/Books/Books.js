@@ -11,7 +11,7 @@ const Books = () => {
   }, []);
   const booksData = useSelector((state) => state.books);
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center books-container">
       {Object.keys(booksData).map((bookId) => (
         (
           <Book
