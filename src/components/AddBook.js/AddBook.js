@@ -18,35 +18,49 @@ const AddBook = () => {
   };
 
   const handleSubmit = () => {
-    const {
-      title, author, category,
-    } = state;
+    const { title, author, category } = state;
     if (title.length > 0 && author.length > 0) {
-      dispatch(addBook({
-        title, author, item_id: uuidv4(), category,
-      }));
+      dispatch(
+        addBook({
+          title,
+          author,
+          item_id: uuidv4(),
+          category,
+        }),
+      );
     }
     state.title = '';
     state.author = '';
   };
   return (
-    <div>
-      <form>
-        <input
-          name="title"
-          value={state.title}
-          type="text"
-          placeholder="Addbook tile"
-          onChange={handleChange}
-        />
-        <input
-          name="author"
-          value={state.author}
-          type="text"
-          placeholder="Author"
-          onChange={handleChange}
-        />
-        <button type="button" onClick={handleSubmit}>ADD BOOK</button>
+    <div className="form-container">
+      <h3>ADD NEW BOOK</h3>
+      <form className="">
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            placeholder="Book title"
+            name="title"
+            value={state.title}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            id="author"
+            placeholder="author"
+            name="author"
+            value={state.author}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="button" className="btn btn-primary" onClick={handleSubmit}>
+          ADD BOOK
+        </button>
       </form>
     </div>
   );

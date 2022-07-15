@@ -1,5 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+.App {
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-container {
+  width: 90%;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: -73px;
+}
+
+.left-content > h5 {
+  font-family: 'Montserrat', sans-serif;
+  color: #121212;
+  font-weight: bold;
+}
+
+.left-content > p {
+  font-family: 'Montserrat', sans-serif;
+  color: #4386bf;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.action-btn {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4386bf;
+  background-color: #fff;
+}
+
+.right-content > h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+.right-content > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+.form-container {
+  margin-top: 90px;
+  width: 90%;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CircularProgressbar {
+  width: 17%;
+  vertical-align: middle;
+}
+
+.completed-container {
+  padding: 8px;
+}
+
+.completed-container > h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #121212;
+  margin-top: -18px;
+}
+
+.completed-container > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #121212;
+}
+
+.form-container > h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
