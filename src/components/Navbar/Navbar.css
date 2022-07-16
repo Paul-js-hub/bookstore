@@ -1,0 +1,45 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  color: #0290ff;
+  font-weight: bold;
+}
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.list-container {
+  display: flex;
+  gap: 21px;
+}
+
+.navbar-nav {
+  gap: 22px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #121212 !important;
+  font-weight: 600;
+}
+
+.inner-container {
+  display: flex;
+}
+
+.user-icon {
+  color: #0290ff;
+  padding-right: 8px !important;
+}
